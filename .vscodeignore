@@ -1,4 +1,5 @@
 .vscode/**
+.claude/**
 src/**
 .gitignore
 tsconfig.json
@@ -6,4 +7,3 @@ tsconfig.json
 **/*.ts
 **/*.test.js
 dist/ucf/__fixtures__/**
-node_modules/**

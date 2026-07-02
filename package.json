@@ -1,0 +1,34 @@
+{
+  "name": "idml-view",
+  "displayName": "IDML View",
+  "description": "Browse the contents of Adobe InDesign IDML (UCF/ZIP) files as a file tree.",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "idml-view.openArchive",
+        "title": "IDML View: Open IDML Archive"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.0"
+  }
+}

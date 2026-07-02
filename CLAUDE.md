@@ -60,8 +60,12 @@ The code is split into two layers:
   - `extension.ts` — activation entry point. Registers the provider on the `idml` scheme and the
     `idml-view.openArchive` command (also reachable via the `.idml` file's Explorer context menu). The command
     opens the picked archive once to run `validateUcfMimetype` (warning the user non-fatally if it looks invalid),
-    then mounts `idml://<archive>` as a new workspace folder via `vscode.workspace.updateWorkspaceFolders`.
-    Individual entries open via VS Code's normal editor resolution — no custom editor is registered.
+    then opens `idml://<archive>` in a **dedicated new window** via
+    `vscode.commands.executeCommand('vscode.openFolder', rootUri, { forceNewWindow: true })`. This was chosen
+    over `vscode.workspace.updateWorkspaceFolders` (added to the current window) after testing showed the latter
+    forces a jarring extension-host restart when adding the first folder to an already-open window; a fresh
+    window's normal startup absorbs that same restart unnoticed. Individual entries open via VS Code's normal
+    editor resolution — no custom editor is registered.
 
 **Current scope is read-only.** Write support (editing entries and repacking a valid UCF file) is a known future
 direction: it would need to buffer edits in memory and, on save, fully rewrite the archive via `yazl` (promoted

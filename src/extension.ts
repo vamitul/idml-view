@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as path from 'node:path';
 import { openUcfArchive, validateUcfMimetype } from './ucf';
 import { IdmlFileSystemProvider } from './idmlFileSystemProvider';
 import { toIdmlUri } from './idmlUri';
@@ -24,11 +23,14 @@ async function mountIdmlArchive(fileUri: vscode.Uri): Promise<void> {
     );
   }
 
+  // Opened in a dedicated new window rather than added to the current
+  // window's workspace folders: `updateWorkspaceFolders` forces an
+  // extension-host restart when adding the first folder to an empty
+  // window, which reads as a jarring hiccup in a window you're already
+  // using. A fresh window's normal startup absorbs that same restart
+  // unnoticed.
   const rootUri = toIdmlUri(fileUri.fsPath, '');
-  vscode.workspace.updateWorkspaceFolders(vscode.workspace.workspaceFolders?.length ?? 0, 0, {
-    uri: rootUri,
-    name: path.basename(fileUri.fsPath)
-  });
+  await vscode.commands.executeCommand('vscode.openFolder', rootUri, { forceNewWindow: true });
 }
 
 export function activate(context: vscode.ExtensionContext): void {

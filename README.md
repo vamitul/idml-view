@@ -10,8 +10,8 @@ directly in VS Code's Explorer, without manually unzipping the file.
 
 1. Run the **IDML View: Open IDML Archive...** command from the Command Palette, or right-click a `.idml` file in
    the Explorer and choose it from the context menu.
-2. The archive's contents are mounted as a new workspace folder. Expand it to browse the internal file tree; click
-   any entry to open it in a normal editor.
+2. The archive opens in a new VS Code window, with its contents shown as the workspace's file tree. Expand it to
+   browse the internal file tree; click any entry to open it in a normal editor.
 
 ## Scope
 

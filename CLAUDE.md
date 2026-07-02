@@ -67,6 +67,13 @@ The code is split into two layers:
     window's normal startup absorbs that same restart unnoticed. Individual entries open via VS Code's normal
     editor resolution — no custom editor is registered.
 
+**`activationEvents` includes `"onFileSystem:idml"`** (`package.json`), the activation event VS Code documents
+specifically for custom-scheme `FileSystemProvider`s (see the `FileSystemProvider` doc-comment in
+`@types/vscode`). It's a defense-in-depth safeguard alongside the dedicated-window mount strategy above — it
+ensures the extension activates whenever anything needs to resolve an `idml://` resource, not only when the
+`idml-view.openArchive` command itself runs. Keep it even though the current mount flow doesn't strictly depend
+on it.
+
 **Current scope is read-only.** Write support (editing entries and repacking a valid UCF file) is a known future
 direction: it would need to buffer edits in memory and, on save, fully rewrite the archive via `yazl` (promoted
 from dev-only to a runtime dependency), re-adding unchanged entries first followed by changes, writing `mimetype`

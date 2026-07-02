@@ -4,6 +4,11 @@
   "description": "Browse the contents of Adobe InDesign IDML (UCF/ZIP) files as a file tree.",
   "version": "0.0.1",
   "private": true,
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vamitul/idml-view"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -11,42 +16,71 @@
     "Other"
   ],
   "activationEvents": [
-    "onFileSystem:idml"
+    "onStartupFinished"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "idml-view.openArchive",
-        "title": "IDML View: Open IDML Archive..."
+        "title": "Open IDML Archive...",
+        "category": "IDML View"
+      },
+      {
+        "command": "idml-view.closeArchive",
+        "title": "Close IDML Archive",
+        "category": "IDML View"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "idml-view.openArchive",
-          "when": "resourceExtname == .idml",
+          "when": "resourceExtname == .idml && !explorerResourceIsFolder",
+          "group": "navigation"
+        },
+        {
+          "command": "idml-view.closeArchive",
+          "when": "resourceExtname == .idml && explorerResourceIsFolder",
           "group": "navigation"
         }
       ]
-    }
+    },
+    "languages": [
+      {
+        "id": "idml-file",
+        "label": "IDML File",
+        "aliases": [
+          "InDesign Markup Language File"
+        ],
+        "extensions": [
+          ".idml"
+        ],
+        "icon": {
+          "light": "./icons/idml-file.svg",
+          "dark": "./icons/idml-file.svg"
+        }
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src",
-    "test:unit": "npm run compile && node --test \"dist/**/*.test.js\""
+    "test:unit": "npm run compile && node --test \"dist/**/*.test.js\"",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^20.x",
     "@types/vscode": "^1.90.0",
     "@types/yauzl": "^3.4.0",
     "@types/yazl": "^3.3.1",
-    "typescript": "^5.5.0",
-    "yazl": "^3.3.1"
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^5.5.0"
   },
   "dependencies": {
-    "yauzl": "^3.4.0"
+    "yauzl": "^3.4.0",
+    "yazl": "^3.3.1"
   }
 }

@@ -4,4 +4,6 @@ src/**
 tsconfig.json
 **/*.map
 **/*.ts
+**/*.test.js
+dist/ucf/__fixtures__/**
 node_modules/**

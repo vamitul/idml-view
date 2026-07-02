@@ -9,11 +9,17 @@ export interface UcfEntry {
   extraFieldLength: number;
 }
 
-export interface UcfArchive {
+export interface UcfArchiveRead {
   readonly sourcePath: string;
   /** In central-directory order. */
   readonly entries: readonly UcfEntry[];
   readEntry(path: string): Promise<Buffer>;
+  close(): Promise<void>;
+}
+
+export interface UcfArchiveWrite {
+  readonly sourcePath: string;
+  writePackage(destPath: string): Promise<void>;
   close(): Promise<void>;
 }
 

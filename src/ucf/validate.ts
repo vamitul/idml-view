@@ -1,4 +1,4 @@
-import type { UcfArchive, UcfValidationResult } from './types';
+import type { UcfArchiveRead, UcfValidationResult } from './types';
 
 const STORED = 0;
 
@@ -8,7 +8,7 @@ const STORED = 0;
  * archive, stored uncompressed, with no extra field, so its bytes land at a
  * fixed, predictable offset.
  */
-export function validateUcfMimetype(archive: UcfArchive): UcfValidationResult {
+export function validateUcfMimetype(archive: UcfArchiveRead): UcfValidationResult {
   const issues: string[] = [];
   const first = archive.entries[0];
 

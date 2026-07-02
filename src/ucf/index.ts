@@ -1,3 +1,3 @@
-export type { UcfArchive, UcfEntry, UcfValidationResult } from './types';
-export { openUcfArchive } from './archive';
+export type { UcfArchiveRead as UcfArchive, UcfArchiveWrite, UcfEntry, UcfValidationResult } from './types';
+export { createUcfArchive, openUcfArchive } from './archive';
 export { validateUcfMimetype } from './validate';

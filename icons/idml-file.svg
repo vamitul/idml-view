@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-01af43a0-5a8e-433c-834f-a88b67371e44" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .uuid-cfdc7e62-935c-4eb8-8aee-14ed4d0d1c07 {
+        fill: url(#uuid-0e1a1f23-a590-4ead-822a-09780e92c2b8);
+      }
+
+      .uuid-68b3a9e5-a232-4edf-aa4f-168552a5706c {
+        fill: url(#uuid-57a661ad-2a99-4096-ae4f-d20020474041);
+      }
+
+      .uuid-63b45d51-b0c9-4852-a60e-f0f0a4af2295 {
+        fill: #f9f9f9;
+      }
+
+      .uuid-d4a210ac-20c4-4e44-a1fc-c5805b2eaa7a {
+        fill: #878787;
+      }
+    </style>
+    <linearGradient id="uuid-0e1a1f23-a590-4ead-822a-09780e92c2b8" x1="222.5" y1="14" x2="222.5" y2="501" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f96e91"/>
+      <stop offset=".15" stop-color="#f55d84"/>
+      <stop offset=".51" stop-color="#ee3c68"/>
+      <stop offset=".8" stop-color="#ea2758"/>
+      <stop offset="1" stop-color="#e92052"/>
+    </linearGradient>
+    <linearGradient id="uuid-57a661ad-2a99-4096-ae4f-d20020474041" x1="16" y1="95.67" x2="179.34" y2="95.67" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff91ac"/>
+      <stop offset="1" stop-color="#fe8ca7"/>
+    </linearGradient>
+  </defs>
+  <path class="uuid-cfdc7e62-935c-4eb8-8aee-14ed4d0d1c07" d="M400.95,14h-221.61L16,177.34v295.61c0,15.49,12.56,28.05,28.05,28.05h356.9c15.49,0,28.05-12.56,28.05-28.05V42.05c0-15.49-12.56-28.05-28.05-28.05Z"/>
+  <path class="uuid-68b3a9e5-a232-4edf-aa4f-168552a5706c" d="M151.29,177.34c15.49,0,28.05-12.56,28.05-28.05V14S16,177.34,16,177.34h135.29Z"/>
+  <rect class="uuid-d4a210ac-20c4-4e44-a1fc-c5805b2eaa7a" x="201" y="302" width="279" height="129" rx="17.99" ry="17.99"/>
+  <g>
+    <path class="uuid-63b45d51-b0c9-4852-a60e-f0f0a4af2295" d="M265.73,326.92v80.53h-16.97v-80.53h16.97Z"/>
+    <path class="uuid-63b45d51-b0c9-4852-a60e-f0f0a4af2295" d="M278.21,328.12c3.72-.84,9.63-1.55,15.98-1.55,9.96,0,16.86,2.51,21.89,7.65,6.57,6.57,9.41,17.32,9.41,32.38s-3.72,27.6-10.84,34.17c-5.15,4.9-12.48,7.41-23.54,7.41-5.04,0-9.96-.6-12.92-.96v-79.09ZM295.06,392.88c.55.24,1.53.24,2.3.24,5.91,0,10.62-7.41,10.62-27.36,0-14.93-3.17-24.49-10.51-24.49-.88,0-1.64,0-2.41.36v51.25Z"/>
+    <path class="uuid-63b45d51-b0c9-4852-a60e-f0f0a4af2295" d="M379.46,382.12c-.33-6.45-.77-16.13-.66-24.61h-.22c-1.2,8.48-3.17,18.52-4.16,23.42l-5.25,24.85h-12.26l-5.04-24.85c-.99-4.9-2.85-14.93-3.83-23.42h-.22c-.33,8.48-.88,18.16-1.2,24.61l-1.2,25.33h-14.34l5.69-80.53h17.73l4.71,25.81c1.86,10.04,3.72,19.35,4.93,28.43h.22c.99-8.84,2.63-18.52,4.38-28.43l4.71-25.81h17.62l4.6,80.53h-15l-1.2-25.33Z"/>
+    <path class="uuid-63b45d51-b0c9-4852-a60e-f0f0a4af2295" d="M405.62,326.92h16.97v64.88h18.06v15.65h-35.03v-80.53Z"/>
+  </g>
+</svg>

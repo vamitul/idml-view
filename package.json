@@ -16,19 +16,35 @@
     "commands": [
       {
         "command": "idml-view.openArchive",
-        "title": "IDML View: Open IDML Archive"
+        "title": "IDML View: Open IDML Archive..."
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "idml-view.openArchive",
+          "when": "resourceExtname == .idml",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test:unit": "npm run compile && node --test \"dist/**/*.test.js\""
   },
   "devDependencies": {
     "@types/node": "^20.x",
     "@types/vscode": "^1.90.0",
-    "typescript": "^5.5.0"
+    "@types/yauzl": "^3.4.0",
+    "@types/yazl": "^3.3.1",
+    "typescript": "^5.5.0",
+    "yazl": "^3.3.1"
+  },
+  "dependencies": {
+    "yauzl": "^3.4.0"
   }
 }
